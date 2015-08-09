@@ -1,0 +1,28 @@
+*Outlier detection;
+title 'Using PROC FASTCLUS to Analyze Data with Outliers';
+data x;
+   drop n;
+   do n=1 to 100;
+      x=rannor(12345)+2;
+      y=rannor(12345);
+      output;
+   end;
+   do n=1 to 100;
+      x=rannor(12345)-2;
+      y=rannor(12345);
+      output;
+   end;
+   do n=1 to 10;
+      x=10*rannor(12345);
+      y=10*rannor(12345);
+      output;
+   end;
+run;
+title2 'Preliminary PROC FASTCLUS Analysis with 20 Clusters';
+proc fastclus data=x outseed=mean1 maxc=20 maxiter=0 summary;
+   var x y;
+run;
+proc sgscatter data=mean1;
+   compare y=(_gap_ _radius_) x=_freq_;
+run;
+

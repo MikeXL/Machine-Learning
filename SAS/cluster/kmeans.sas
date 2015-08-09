@@ -1,0 +1,22 @@
+proc fastclus data=sashelp.iris maxc=2 maxiter=10 out=clus;
+   var SepalLength SepalWidth PetalLength PetalWidth;
+run;
+proc freq;
+   tables cluster*species;
+run;
+proc fastclus data=iris maxc=3 maxiter=10 out=clus;
+   var SepalLength SepalWidth PetalLength PetalWidth;
+run;
+proc freq;
+   tables cluster*Species;
+run;
+proc candisc anova out=can;
+   class cluster;
+   var SepalLength SepalWidth PetalLength PetalWidth;
+   title2 'Canonical Discriminant Analysis of Iris Clusters';
+run;
+proc sgplot data=Can;
+   scatter y=Can2 x=Can1 / group=Cluster;
+   title2 'Plot of Canonical Variables Identified by Cluster';
+run;
+
