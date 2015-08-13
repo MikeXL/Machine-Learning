@@ -19,5 +19,15 @@ Cross Validation
 accuracy, easier to calculate for an supervised algo, as you do have the test data set.
 
 
+some other general topics
+
+feature extract / dimsion reduction / variable selection
+
+
+overfitting
+
+
+boosting / bootstraping / bagging 
+
 
 Logic is the beginning not the end 🖖
