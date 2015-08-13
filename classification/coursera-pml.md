@@ -47,7 +47,7 @@ also explored naive bayes classifier, decision tree and random forest. the simpl
 fit <- randomForest(classe~features, data=train)
 ```
 
-
+Please [click here][4] for github repo that contains source code and html files.
 
 
 🖖
@@ -57,3 +57,4 @@ fit <- randomForest(classe~features, data=train)
 [1]: http://mikexl.github.io/machine-learning/coursera-pml.html
 [2]: http://groupware.les.inf.puc-rio.br/har
 [3]: https://class.coursera.org/predmachlearn-031/human_grading/view/courses/975200/assessments/4/submissions/36
+[4]: https://github.com/MikeXL/CourseraPML "Github Repo for assignment"
