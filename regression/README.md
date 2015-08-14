@@ -1,0 +1,10 @@
+Regression
+===
+
+lm
+
+
+glm
+
+
+logit
