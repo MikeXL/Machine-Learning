@@ -11,9 +11,10 @@ sentiment_url <- 'https://api.datamarket.azure.com/data.ashx/amla/text-analytics
 
 # assuming the text in the data frame named sentiment.text
 # column names: Id, Text
+# as of September, 2015 the API supports up to 1000 texts in one batch call
 params <- paste("{Inputs:", toJSON(sentiment.text), "}")
 
-req <- POST(sentiment_url, 
+req <- POST(sentiment_url,
             add_headers(
                         "Content-Type"  = paste("application/json"),
                         "Authorization" = paste("Basic", secret)
